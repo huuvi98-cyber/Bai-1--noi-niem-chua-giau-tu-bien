@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="portSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#f0f9ff"/>
+    </linearGradient>
+    <linearGradient id="seaPort" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="boatHull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="620" fill="url(#portSky)"/>
+  <rect y="620" width="1920" height="460" fill="url(#seaPort)"/>
+
+  <!-- Distant boats in harbor background -->
+  <g opacity="0.75">
+    <path d="M120,480 L480,480 L440,590 L160,590 Z" fill="#0284c7"/>
+    <path d="M1600,470 L1900,470 L1870,580 L1630,580 Z" fill="#0369a1"/>
+    <!-- Distant Red Flags -->
+    <polygon points="320,380 370,400 320,420" fill="#dc2626"/>
+    <line x1="320" y1="380" x2="320" y2="480" stroke="#475569" stroke-width="4"/>
+    <polygon points="1750,370 1800,390 1750,410" fill="#dc2626"/>
+    <line x1="1750" y1="370" x2="1750" y2="470" stroke="#475569" stroke-width="4"/>
+  </g>
+
+  <!-- Central Hero Fishing Boat: BD-91108-TS -->
+  <!-- Mast & Rigging structure -->
+  <line x1="960" y1="80" x2="960" y2="580" stroke="#0284c7" stroke-width="20"/>
+  <!-- Crossbars -->
+  <line x1="840" y1="220" x2="1080" y2="220" stroke="#0284c7" stroke-width="14"/>
+  <line x1="800" y1="340" x2="1120" y2="340" stroke="#0284c7" stroke-width="14"/>
+
+  <!-- Top Red Flag with Gold Star -->
+  <g transform="translate(960, 40)">
+    <rect x="0" y="0" width="160" height="100" fill="#dc2626" rx="4"/>
+    <!-- Gold star -->
+    <polygon points="80,25 93,65 58,40 102,40 67,65" fill="#facc15"/>
+  </g>
+
+  <!-- Cabin Structure (Wheelhouse) -->
+  <rect x="820" y="360" width="280" height="240" fill="#facc15" rx="8" stroke="#ca8a04" stroke-width="4"/>
+  <!-- Blue window frames -->
+  <rect x="850" y="390" width="60" height="90" fill="#0284c7"/>
+  <rect x="930" y="390" width="60" height="90" fill="#0284c7"/>
+  <rect x="1010" y="390" width="60" height="90" fill="#0284c7"/>
+
+  <!-- Fishermen standing on deck -->
+  <circle cx="890" cy="540" r="16" fill="#b45309"/>
+  <rect x="875" y="556" width="30" height="40" fill="#0f172a"/>
+  <circle cx="950" cy="535" r="16" fill="#b45309"/>
+  <rect x="935" y="551" width="30" height="45" fill="#e11d48"/>
+  <circle cx="1010" cy="540" r="16" fill="#b45309"/>
+  <rect x="995" y="556" width="30" height="40" fill="#0284c7"/>
+
+  <!-- Large Hull Bow -->
+  <!-- Red Top Rail -->
+  <path d="M620,580 L1300,580 L1260,630 L660,630 Z" fill="#dc2626"/>
+  <!-- Yellow middle accent band -->
+  <path d="M660,630 L1260,630 L1230,680 L690,680 Z" fill="#facc15"/>
+  <!-- Main Blue Hull -->
+  <path d="M690,680 L1230,680 L1080,950 L840,950 Z" fill="url(#boatHull)"/>
+
+  <!-- Vessel Registration Text: BD - 91108 - TS -->
+  <text x="960" y="770" font-family="sans-serif" font-weight="900" font-size="52" fill="#ffffff" text-anchor="middle" letter-spacing="4">
+    BD - 91108 - TS
+  </text>
+  <text x="960" y="830" font-family="sans-serif" font-weight="700" font-size="28" fill="#e0f2fe" text-anchor="middle" letter-spacing="2">
+    CẢNG CÁ TAM QUAN · GIA LAI
+  </text>
+
+  <!-- Water wake & reflections -->
+  <ellipse cx="960" cy="950" rx="300" ry="30" fill="#38bdf8" opacity="0.4"/>
+</svg>

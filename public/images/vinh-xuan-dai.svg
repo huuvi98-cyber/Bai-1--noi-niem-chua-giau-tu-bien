@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aerialSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="bayDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="60%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Blue Bay Ocean -->
+  <rect width="1920" height="1080" fill="url(#bayDeep)"/>
+  <!-- Hazy sky on horizon -->
+  <rect width="1920" height="220" fill="url(#aerialSky)"/>
+
+  <!-- Distant Blue Ridge Mountains (Dãy núi bao bọc vịnh) -->
+  <path d="M0,180 Q320,140 680,190 Q1120,130 1560,180 Q1780,150 1920,180 L1920,240 L0,240 Z" fill="#0284c7" opacity="0.6"/>
+  <path d="M0,210 Q480,180 960,220 Q1440,170 1920,210 L1920,260 L0,260 Z" fill="#075985" opacity="0.8"/>
+
+  <!-- Thousands of geometric floating cages spreading across the bay -->
+  <!-- Distant tiny dot arrays -->
+  <g fill="#93c5fd" opacity="0.6">
+    <!-- Generated grid array lines -->
+    <path d="M100,320 L1800,320 M120,360 L1820,360 M80,410 L1840,410" stroke="#bae6fd" stroke-width="2" stroke-dasharray="10,25"/>
+  </g>
+
+  <!-- Middle distance cage rectangles -->
+  <g fill="#0284c7" stroke="#38bdf8" stroke-width="3" opacity="0.85">
+    <!-- Cluster 1 -->
+    <rect x="220" y="440" width="80" height="35" rx="2"/>
+    <rect x="340" y="450" width="85" height="35" rx="2"/>
+    <rect x="470" y="430" width="80" height="35" rx="2"/>
+    <rect x="620" y="460" width="90" height="38" rx="2"/>
+    <rect x="760" y="440" width="85" height="35" rx="2"/>
+    <rect x="910" y="450" width="80" height="35" rx="2"/>
+    <rect x="1050" y="430" width="85" height="35" rx="2"/>
+    <rect x="1190" y="460" width="90" height="38" rx="2"/>
+    <rect x="1340" y="440" width="85" height="35" rx="2"/>
+    <rect x="1490" y="450" width="80" height="35" rx="2"/>
+    <rect x="1620" y="430" width="85" height="35" rx="2"/>
+
+    <!-- Cluster 2 -->
+    <rect x="180" y="530" width="95" height="42" rx="3"/>
+    <rect x="320" y="540" width="100" height="44" rx="3"/>
+    <rect x="480" y="520" width="95" height="42" rx="3"/>
+    <rect x="660" y="550" width="105" height="46" rx="3"/>
+    <rect x="830" y="530" width="100" height="44" rx="3"/>
+    <rect x="1010" y="540" width="95" height="42" rx="3"/>
+    <rect x="1180" y="520" width="100" height="44" rx="3"/>
+    <rect x="1360" y="550" width="105" height="46" rx="3"/>
+    <rect x="1540" y="530" width="100" height="44" rx="3"/>
+    <rect x="1710" y="540" width="95" height="42" rx="3"/>
+  </g>
+
+  <!-- Foreground large cage units with nets and buoys -->
+  <g fill="#075985" stroke="#38bdf8" stroke-width="5">
+    <rect x="240" y="660" width="140" height="60" rx="4"/>
+    <rect x="450" y="680" width="150" height="65" rx="4"/>
+    <rect x="680" y="650" width="140" height="60" rx="4"/>
+    <rect x="940" y="690" width="160" height="70" rx="4"/>
+    <rect x="1220" y="660" width="150" height="65" rx="4"/>
+    <rect x="1480" y="680" width="160" height="70" rx="4"/>
+
+    <!-- Closest Rafts -->
+    <rect x="160" y="820" width="190" height="85" rx="6" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="6"/>
+    <rect x="480" y="850" width="210" height="90" rx="6" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="6"/>
+    <rect x="860" y="810" width="220" height="95" rx="6" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="6"/>
+    <rect x="1280" y="840" width="210" height="90" rx="6" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="6"/>
+    <rect x="1620" y="820" width="190" height="85" rx="6" fill="#0c4a6e" stroke="#7dd3fc" stroke-width="6"/>
+  </g>
+
+  <!-- Central Lift Net Trap (Vó bè cất cá) -->
+  <polygon points="960,860 840,940 960,1020 1080,940" fill="none" stroke="#facc15" stroke-width="4" stroke-dasharray="8,8"/>
+  <circle cx="960" cy="940" r="14" fill="#facc15"/>
+</svg>

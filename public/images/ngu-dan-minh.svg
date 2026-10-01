@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="cabinWood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background through cabin windows -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+  <!-- Distant sea and horizon -->
+  <path d="M0,520 Q960,540 1920,520 L1920,650 L0,650 Z" fill="#0284c7" opacity="0.6"/>
+  <!-- Distant boats through window -->
+  <path d="M300,520 L340,520 L350,505 L310,505 Z" fill="#0369a1"/>
+  <path d="M720,525 L770,525 L780,510 L730,510 Z" fill="#dc2626"/>
+
+  <!-- Blue Cabin Walls & Window Frames -->
+  <!-- Left Window Slanted Post -->
+  <polygon points="0,0 280,0 200,1080 0,1080" fill="url(#cabinWood)"/>
+  <!-- Center Window divider -->
+  <polygon points="460,0 520,0 480,1080 420,1080" fill="#075985"/>
+  <polygon points="860,0 920,0 890,1080 830,1080" fill="#0369a1"/>
+  <!-- Top Roof beam -->
+  <rect x="0" y="0" width="1920" height="180" fill="#075985"/>
+  <rect x="0" y="140" width="1920" height="30" fill="#0284c7"/>
+  <!-- Right Wall / Door Structure -->
+  <rect x="1000" y="170" width="920" height="910" fill="url(#cabinWood)"/>
+  <!-- Door frame and panels -->
+  <rect x="1060" y="220" width="340" height="600" fill="#0369a1" rx="8"/>
+  <rect x="1080" y="240" width="300" height="260" fill="#075985" rx="6"/>
+  <rect x="1080" y="520" width="300" height="280" fill="#075985" rx="6"/>
+
+  <!-- Instrument / Radio console overhead right -->
+  <rect x="1440" y="190" width="460" height="180" fill="#0f172a" rx="10"/>
+  <rect x="1460" y="210" width="160" height="120" fill="#1e293b"/>
+  <circle cx="1540" cy="270" r="40" fill="#0284c7" opacity="0.8"/>
+  <circle cx="1720" cy="250" r="16" fill="#38bdf8"/>
+  <circle cx="1780" cy="250" r="16" fill="#facc15"/>
+  <circle cx="1840" cy="250" r="16" fill="#22c55e"/>
+
+  <!-- Fisherman Captain Nguyen Van Minh -->
+  <!-- Pilot Chair backrest -->
+  <rect x="1500" y="440" width="360" height="640" rx="40" fill="#1e293b"/>
+
+  <!-- Head & Hair -->
+  <ellipse cx="1380" cy="380" rx="90" ry="110" fill="url(#skin)"/>
+  <path d="M1290,360 Q1380,260 1470,350 Q1450,270 1360,270 Q1290,290 1290,360 Z" fill="#0f172a"/>
+  <!-- Facial features in profile looking left towards horizon -->
+  <path d="M1300,380 L1265,395 L1300,420 L1295,450 Q1320,460 1350,450" fill="none" stroke="#92400e" stroke-width="4"/>
+  <circle cx="1310" cy="365" r="7" fill="#0f172a"/>
+  <!-- Ear -->
+  <ellipse cx="1450" cy="390" rx="18" ry="28" fill="#b45309"/>
+
+  <!-- Torso in salmon polo shirt -->
+  <path d="M1240,490 Q1380,480 1520,510 L1560,950 L1180,950 Z" fill="url(#shirt)"/>
+  <!-- Collar -->
+  <path d="M1320,485 L1380,560 L1440,490 Z" fill="#be123c"/>
+  <rect x="1370" y="550" width="20" height="90" fill="#be123c"/>
+
+  <!-- Right Arm extending to steering wheel -->
+  <path d="M1280,560 Q1050,680 840,700 Q830,730 870,750 Q1060,730 1320,670 Z" fill="url(#skin)"/>
+  <!-- Hand gripping wheel -->
+  <ellipse cx="820" cy="710" rx="35" ry="25" fill="#b45309"/>
+
+  <!-- Marine Steering Wheel with spokes -->
+  <g transform="translate(760, 750)">
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#0284c7" stroke-width="24"/>
+    <circle cx="0" cy="0" r="50" fill="#0f172a" stroke="#38bdf8" stroke-width="8"/>
+    <!-- Spokes with wooden handles -->
+    <line x1="0" y1="-140" x2="0" y2="-210" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="0" y1="140" x2="0" y2="210" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="-140" y1="0" x2="-210" y2="0" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="140" y1="0" x2="210" y2="0" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="-100" y1="-100" x2="-150" y2="-150" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="100" y1="-100" x2="150" y2="-150" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="-100" y1="100" x2="-150" y2="150" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+    <line x1="100" y1="100" x2="150" y2="150" stroke="#b45309" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <!-- Left Console with Thermos Flask & Mug in foreground -->
+  <rect x="240" y="700" width="340" height="380" fill="#0369a1" rx="16"/>
+  <!-- Green Thermos -->
+  <rect x="300" y="650" width="90" height="240" rx="14" fill="#059669"/>
+  <rect x="310" y="620" width="70" height="40" rx="6" fill="#065f46"/>
+  <!-- White Mug -->
+  <rect x="350" y="800" width="110" height="150" rx="12" fill="#f8fafc"/>
+  <path d="M460,830 Q500,870 460,910" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+</svg>

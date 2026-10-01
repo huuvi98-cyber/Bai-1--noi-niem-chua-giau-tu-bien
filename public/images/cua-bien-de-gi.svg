@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="degiSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="degiSea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#degiSea)"/>
+  <!-- Sky -->
+  <rect width="1920" height="320" fill="url(#degiSky)"/>
+
+  <!-- Left Rocky Headland / Mountain (Mũi đá cửa Đề Gi) -->
+  <path d="M0,160 Q180,180 280,360 Q120,440 0,460 Z" fill="#15803d"/>
+  <path d="M0,280 Q220,320 180,440 L0,480 Z" fill="#ca8a04" opacity="0.6"/>
+
+  <!-- Breakwater Jetty on horizon right (Đê chắn sóng) -->
+  <polygon points="1000,310 1920,330 1920,350 1020,330" fill="#475569"/>
+
+  <!-- Dense Grid of Floating Aquaculture Cages (Mạng lưới lồng bè ken đặc) -->
+  <!-- Background cages -->
+  <g opacity="0.6" stroke="#0284c7" stroke-width="4">
+    <rect x="400" y="380" width="220" height="100" fill="#0d9488"/>
+    <rect x="680" y="360" width="280" height="120" fill="#0f766e"/>
+    <rect x="1300" y="370" width="340" height="100" fill="#0284c7"/>
+  </g>
+
+  <!-- Large foreground Aquaculture Raft Complex (Cụm bè lớn) -->
+  <g transform="translate(240, 480)">
+    <!-- Main outer blue framework -->
+    <rect x="0" y="0" width="1380" height="480" fill="none" stroke="#0284c7" stroke-width="16" rx="8"/>
+    
+    <!-- 4x6 Square Cage Pens inside (Các ô nuôi) -->
+    <g fill="#14b8a6" opacity="0.65" stroke="#38bdf8" stroke-width="8">
+      <!-- Row 1 -->
+      <rect x="40" y="30" width="180" height="110"/>
+      <rect x="250" y="30" width="180" height="110"/>
+      <rect x="460" y="30" width="180" height="110"/>
+      <rect x="670" y="30" width="180" height="110"/>
+      <rect x="880" y="30" width="180" height="110"/>
+      <rect x="1090" y="30" width="180" height="110"/>
+      <!-- Row 2 -->
+      <rect x="40" y="170" width="180" height="110"/>
+      <rect x="250" y="170" width="180" height="110"/>
+      <rect x="460" y="170" width="180" height="110"/>
+      <rect x="670" y="170" width="180" height="110"/>
+      <rect x="880" y="170" width="180" height="110"/>
+      <rect x="1090" y="170" width="180" height="110"/>
+      <!-- Row 3 -->
+      <rect x="40" y="310" width="180" height="110"/>
+      <rect x="250" y="310" width="180" height="110"/>
+      <rect x="460" y="310" width="180" height="110"/>
+      <rect x="670" y="310" width="180" height="110"/>
+      <rect x="880" y="310" width="180" height="110"/>
+      <rect x="1090" y="310" width="180" height="110"/>
+    </g>
+
+    <!-- Guard Shack with Corrugated Roof & Solar Panel -->
+    <rect x="1000" y="240" width="320" height="180" fill="#334155" rx="8"/>
+    <polygon points="980,240 1340,240 1300,200 1020,200" fill="#94a3b8"/>
+    <!-- Solar panel -->
+    <rect x="1050" y="205" width="140" height="30" fill="#1e3a8a" stroke="#60a5fa" stroke-width="4"/>
+  </g>
+
+  <!-- Wooden Boats moored alongside cages -->
+  <polygon points="60,600 140,600 120,680 80,680" fill="#0369a1"/>
+  <polygon points="260,760 380,760 350,860 290,860" fill="#0284c7"/>
+</svg>
