@@ -12,7 +12,6 @@ import { AnimatedSectionHeading, AnimatedSection4Heading } from './components/An
 
 // 6 Real High-Res Journalistic Photographs by Reporter Ngọc Oai
 import nguDanMinhImg from './assets/images/regenerated_image_1790847187524.jpg';
-import tauCaXaBoImg from './assets/images/regenerated_image_1790845731681.jpg';
 import khoangTauDaImg from './assets/images/regenerated_image_1790846987152.jpg';
 import damCuMongImg from './assets/images/regenerated_image_1790846990098.jpg';
 import cuaBienDeGiImg from './assets/images/regenerated_image_1790845600529.jpg';
@@ -145,15 +144,6 @@ export default function App() {
             <p className="text-justify">
               {articleContent.sections[0].paragraphs[1]}
             </p>
-
-            {/* FULL SCREEN PHOTO 2: Tàu cá xa bờ trở về */}
-            <FullScreenEditorialPhoto
-              id="tau-ca-xa-bo"
-              imageSrc={photoOverrides['tau-ca-xa-bo'] || tauCaXaBoImg}
-              caption="Những tàu cá xa bờ ở tỉnh Gia Lai đang trở về cảng bờ sau hành trình dài đánh bắt ở các ngư trường Hoàng Sa, Trường Sa trở về bờ bán hải sản."
-              credit="Ảnh: NGỌC OAI"
-              onPhotoChange={handlePhotoChange}
-            />
 
             {/* Paragraph 3 */}
             <p className="text-justify">
