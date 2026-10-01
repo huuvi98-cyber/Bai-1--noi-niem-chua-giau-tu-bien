@@ -8,6 +8,7 @@ import { articleContent } from './data/articleData';
 import { HeroSection } from './components/HeroSection';
 import { FullScreenEditorialPhoto } from './components/FullScreenEditorialPhoto';
 import { EditorialPhoto } from './components/EditorialPhoto';
+import { AnimatedSectionHeading, AnimatedSection4Heading } from './components/AnimatedHeadings';
 
 // 6 Real High-Res Journalistic Photographs by Reporter Ngọc Oai
 import nguDanMinhImg from './assets/images/regenerated_image_1790847187524.jpg';
@@ -19,8 +20,7 @@ import vinhXuanDaiImg from './assets/images/regenerated_image_1790847833273.jpg'
 import pgsVuThanhCaImg from './assets/images/regenerated_image_1790851119038.png';
 import tauContainerEvergreenImg from './assets/images/regenerated_image_1790851760364.jpg';
 import damPhaNuoiTrongImg from './assets/images/regenerated_image_1790852276174.jpg';
-
-import { ArrowUp } from 'lucide-react';
+import caNguDaiDuongImg from './assets/images/regenerated_image_1790854196964.jpg';
 
 export default function App() {
   const articleRef = useRef<HTMLDivElement>(null);
@@ -45,10 +45,6 @@ export default function App() {
       }
       return updated;
     });
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Support silent drag-and-drop of images anywhere on the window
@@ -82,6 +78,8 @@ export default function App() {
             targetId = 'cua-bien-de-gi';
           } else if (name.includes('xuân đài') || name.includes('xuan dai') || name.includes('vỡ quy hoạch') || name.includes('suy thoái')) {
             targetId = 'vinh-xuan-dai';
+          } else if (name.includes('cá ngừ') || name.includes('ca ngu') || name.includes('vươn khơi') || name.includes('mong đợi') || name.includes('đại dương')) {
+            targetId = 'ca-ngu-dai-duong';
           }
 
           if (targetId) {
@@ -119,17 +117,14 @@ export default function App() {
 
         {/* Sapo / Article Subtitle - 100% Verbatim */}
         <div className="mb-14 sm:mb-16">
-          <p className="text-xl sm:text-2xl font-editorial-sans font-medium leading-relaxed sm:leading-relaxed text-cyan-200 border-l-4 border-cyan-400 pl-5 sm:pl-6 py-1">
+          <p className="text-xl sm:text-2xl font-editorial-sans font-medium leading-relaxed sm:leading-relaxed text-cyan-200 text-justify">
             {articleContent.sapo}
           </p>
         </div>
 
         {/* SECTION 1: Bắt được cá lớn, vẫn nghèo! */}
         <article id="bat-duoc-ca-lon-van-ngheo" className="mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-editorial-sans mb-8 tracking-tight text-white flex items-center gap-3">
-            <span className="w-8 h-1 bg-cyan-400 rounded-full inline-block" />
-            <span>{articleContent.sections[0].heading}</span>
-          </h2>
+          <AnimatedSectionHeading heading={articleContent.sections[0].heading} />
 
           <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
             {/* Paragraph 1 */}
@@ -165,6 +160,15 @@ export default function App() {
               {articleContent.sections[0].paragraphs[2]}
             </p>
 
+            {/* FULL SCREEN PHOTO: Nhiều chuyến tàu vươn khơi mang về lượng cá ngừ đại dương... */}
+            <FullScreenEditorialPhoto
+              id="ca-ngu-dai-duong"
+              imageSrc={photoOverrides['ca-ngu-dai-duong'] || caNguDaiDuongImg}
+              caption="Nhiều chuyến tàu vươn khơi mang về lượng cá ngừ đại dương khá cao, nhưng giá cá lại chưa được như mong đợi."
+              credit="ẢNH: HUỲNH HẢI"
+              onPhotoChange={handlePhotoChange}
+            />
+
             {/* Paragraph 4 */}
             <p className="text-justify">
               {articleContent.sections[0].paragraphs[3]}
@@ -188,10 +192,7 @@ export default function App() {
 
         {/* SECTION 2: “Hậu phương” chưa theo kịp */}
         <article id="hau-phuong-chua-theo-kip" className="mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-editorial-sans mb-8 tracking-tight text-white flex items-center gap-3">
-            <span className="w-8 h-1 bg-cyan-400 rounded-full inline-block" />
-            <span>{articleContent.sections[1].heading}</span>
-          </h2>
+          <AnimatedSectionHeading heading={articleContent.sections[1].heading} />
 
           <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
             <p className="text-justify">
@@ -205,10 +206,7 @@ export default function App() {
 
         {/* SECTION 3: Quy hoạch quá chậm */}
         <article id="quy-hoach-qua-cham" className="mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-editorial-sans mb-8 tracking-tight text-white flex items-center gap-3">
-            <span className="w-8 h-1 bg-cyan-400 rounded-full inline-block" />
-            <span>{articleContent.sections[2].heading}</span>
-          </h2>
+          <AnimatedSectionHeading heading={articleContent.sections[2].heading} />
 
           <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
             <p className="text-justify">
@@ -276,14 +274,7 @@ export default function App() {
 
         {/* SECTION 4: Đổi tư duy quản trị để làm giàu từ biển */}
         <article id="doi-tu-duy-quan-tri" className="mb-14 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-editorial-sans mb-8 tracking-tight pl-4 sm:pl-6 border-l-4 sm:border-l-[6px] border-red-600 leading-[1.15] uppercase">
-            <span className="block text-cyan-300 drop-shadow-md uppercase">
-              Đổi tư duy quản trị
-            </span>
-            <span className="block text-white mt-1 sm:mt-1.5 uppercase">
-              để làm giàu từ biển
-            </span>
-          </h2>
+          <AnimatedSection4Heading line1="Đổi tư duy quản trị" line2="để làm giàu từ biển" />
 
           <div className="mb-10">
             <p className="text-[19px] sm:text-[21px] leading-[1.8] italic text-justify text-slate-100">
@@ -353,7 +344,17 @@ export default function App() {
               <EditorialPhoto
                 id="pgs-vu-thanh-ca"
                 src={photoOverrides['pgs-vu-thanh-ca'] || pgsVuThanhCaImg}
-                caption="PGS-TS Vũ Thanh Ca, nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo, Tổng cục Biển và Hải đảo Việt Nam"
+                caption={
+                  <span className="block space-y-0.5">
+                    <strong className="font-semibold text-white block">PGS-TS Vũ Thanh Ca,</strong>
+                    <span className="font-normal italic text-slate-300 block">
+                      nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
+                    </span>
+                    <span className="font-normal italic text-slate-300 block">
+                      Tổng cục Biển và Hải đảo Việt Nam
+                    </span>
+                  </span>
+                }
                 aspectRatio="4/3"
                 onPhotoChange={handlePhotoChange}
               />
@@ -369,9 +370,17 @@ export default function App() {
             {/* Author Attribution verbatim */}
             {articleContent.sections[7].author && (
               <div className="mt-8 pt-4 border-t border-cyan-400/20 text-right">
-                <span className="font-bold text-sm sm:text-base font-editorial-sans block text-cyan-300">
-                  {articleContent.sections[7].author}
-                </span>
+                <div className="text-sm sm:text-base font-editorial-sans text-right space-y-1">
+                  <span className="font-bold block text-cyan-300">
+                    PGS-TS Vũ Thanh Ca,
+                  </span>
+                  <span className="font-normal italic text-slate-200 block">
+                    nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
+                  </span>
+                  <span className="font-normal italic text-slate-300 block">
+                    Tổng cục Biển và Hải đảo Việt Nam
+                  </span>
+                </div>
               </div>
             )}
           </div>
@@ -391,17 +400,6 @@ export default function App() {
             ))}
           </div>
         </aside>
-
-        {/* Minimal Scroll to top */}
-        <div className="mt-14 pt-8 border-t border-white/10 flex justify-end">
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
-          >
-            <ArrowUp className="w-4 h-4 text-cyan-400" />
-            <span>Lên đầu trang</span>
-          </button>
-        </div>
 
       </main>
     </div>

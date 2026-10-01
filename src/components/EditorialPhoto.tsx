@@ -5,7 +5,7 @@ interface EditorialPhotoProps {
   id: string;
   src?: string;
   fallbackGraphic?: React.ReactNode;
-  caption: string;
+  caption: React.ReactNode;
   credit?: string;
   aspectRatio?: '16/9' | '4/3' | '21/9' | '3/2';
   customImageMap?: Record<string, string>;
@@ -84,7 +84,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
           {activeSrc && !imgError ? (
             <img
               src={activeSrc}
-              alt={caption}
+              alt={typeof caption === 'string' ? caption : id}
               referrerPolicy="no-referrer"
               onError={() => setImgError(true)}
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
@@ -102,7 +102,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
         </div>
 
         {/* Documentary Photo Caption */}
-        <figcaption className="p-3.5 sm:p-4 border-t border-white/10 bg-black/50 backdrop-blur-sm text-xs sm:text-[13px] md:text-sm text-slate-200 font-editorial-sans leading-relaxed">
+        <figcaption className="p-3.5 sm:p-4 border-t border-cyan-500/25 bg-[#021b36]/80 backdrop-blur-md text-xs sm:text-[13px] md:text-sm text-slate-200 font-editorial-sans leading-relaxed">
           <p className="text-justify font-medium">
             {caption}
           </p>
@@ -136,7 +136,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               {activeSrc && !imgError ? (
                 <img
                   src={activeSrc}
-                  alt={caption}
+                  alt={typeof caption === 'string' ? caption : id}
                   referrerPolicy="no-referrer"
                   className="max-h-[75vh] w-auto object-contain brightness-[1.08] contrast-[1.02] saturate-[1.05]"
                 />
@@ -150,7 +150,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               )}
             </div>
 
-            <div className="p-4 sm:p-5 border-t border-cyan-500/20 bg-[#02223f] text-sm text-slate-200 font-editorial-sans">
+            <div className="p-4 sm:p-5 border-t border-cyan-500/25 bg-[#021b36]/90 backdrop-blur-md text-sm text-slate-200 font-editorial-sans">
               <p className="italic text-justify leading-relaxed">{caption}</p>
               {credit && (
                 <span className="block mt-2 text-xs text-cyan-400 font-semibold uppercase text-right">

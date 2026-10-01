@@ -98,14 +98,14 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
           {(caption || credit) && (
             <div className="absolute bottom-0 inset-x-0 p-3 sm:p-6 md:p-8 pointer-events-none">
               <div className="max-w-4xl mx-auto">
-                <figcaption className="p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-sm border border-white/10 text-white font-editorial-sans shadow-xl pointer-events-auto space-y-1.5">
+                <figcaption className="p-3 sm:p-4 rounded-xl bg-[#021b36]/80 backdrop-blur-md border border-cyan-500/30 text-white font-editorial-sans shadow-xl pointer-events-auto space-y-1.5">
                   {caption && (
                     <p className="text-xs sm:text-[13px] md:text-sm leading-relaxed text-slate-200 text-justify">
                       {caption}
                     </p>
                   )}
                   {credit && (
-                    <div className={`flex items-center justify-end ${caption ? 'pt-1 border-t border-white/10' : ''}`}>
+                    <div className={`flex items-center justify-end ${caption ? 'pt-1 border-t border-cyan-500/25' : ''}`}>
                       <span className="text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase tracking-wider">
                         {credit}
                       </span>
@@ -151,7 +151,7 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
           {/* Modal Caption */}
           {(caption || credit) && (
             <div 
-              className="max-w-4xl mx-auto w-full p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-md border border-white/15 text-white font-editorial-sans shadow-2xl"
+              className="max-w-4xl mx-auto w-full p-3 sm:p-4 rounded-xl bg-[#021b36]/85 backdrop-blur-md border border-cyan-500/30 text-white font-editorial-sans shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {caption && (
@@ -160,7 +160,7 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
                 </p>
               )}
               {credit && (
-                <span className={`block ${caption ? 'mt-1.5' : ''} text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase text-right`}>
+                <span className={`block ${caption ? 'mt-1.5' : ''} text-[11px] sm:text-xs text-cyan-300 font-semibold uppercase text-right`}>
                   {credit}
                 </span>
               )}
