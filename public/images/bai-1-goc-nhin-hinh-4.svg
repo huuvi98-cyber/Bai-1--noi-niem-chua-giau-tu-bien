@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyBlueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ea8de" />
+      <stop offset="45%" stop-color="#72bfe8" />
+      <stop offset="85%" stop-color="#a4d8f2" />
+      <stop offset="100%" stop-color="#d6edfc" />
+    </linearGradient>
+    <linearGradient id="deepLagoonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#144265" />
+      <stop offset="40%" stop-color="#0c3553" />
+      <stop offset="80%" stop-color="#072942" />
+      <stop offset="100%" stop-color="#031a2c" />
+    </linearGradient>
+    <linearGradient id="waterRippleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#7dd3fc" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.6" />
+    </linearGradient>
+    <pattern id="fishNetPat" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0,0 L20,20 M20,0 L0,20" stroke="#f1f5f9" stroke-width="0.8" opacity="0.45" />
+    </pattern>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="350" fill="url(#skyBlueGrad)" />
+
+  <!-- Distant Mountains -->
+  <path d="M0,320 Q280,270 550,300 Q800,260 1100,290 Q1380,260 1600,310 L1600,350 L0,350 Z" fill="#93c5fd" opacity="0.45" />
+
+  <!-- Mangrove Trees & Shoreline in Background -->
+  <path d="M0,345 Q150,320 350,335 Q500,350 700,335 Q900,325 1150,340 Q1400,330 1600,345 L1600,360 L0,360 Z" fill="#15803d" />
+  <path d="M0,340 C80,315 220,315 360,335 C480,315 620,325 760,335 C880,315 1020,320 1180,335 C1320,315 1480,320 1600,338 L1600,360 L0,360 Z" fill="#166534" />
+
+  <!-- Lagoon Water Surface -->
+  <rect y="350" width="1600" height="550" fill="url(#deepLagoonGrad)" />
+
+  <!-- Distant Fish Farms & Floating Stakes -->
+  <line x1="450" y1="345" x2="450" y2="380" stroke="#78350f" stroke-width="2.5" />
+  <line x1="580" y1="340" x2="580" y2="385" stroke="#78350f" stroke-width="2.5" />
+  <line x1="850" y1="345" x2="850" y2="380" stroke="#78350f" stroke-width="2.5" />
+  <line x1="1020" y1="340" x2="1020" y2="385" stroke="#78350f" stroke-width="2.5" />
+
+  <!-- Main Fishing / Aquaculture Enclosure Structures (Bamboo Poles & Netting) -->
+  <!-- Back enclosure net -->
+  <polygon points="120,440 680,440 650,680 150,680" fill="url(#fishNetPat)" opacity="0.6" />
+  <polygon points="680,440 1480,440 1450,680 650,680" fill="url(#fishNetPat)" opacity="0.5" />
+
+  <!-- Tall Vertical Bamboo Stakes (Left to Right) -->
+  <line x1="60" y1="410" x2="60" y2="760" stroke="#d97706" stroke-width="7" stroke-linecap="round" />
+  <line x1="180" y1="390" x2="180" y2="760" stroke="#b45309" stroke-width="8" stroke-linecap="round" />
+  <line x1="310" y1="420" x2="310" y2="760" stroke="#d97706" stroke-width="7" stroke-linecap="round" />
+  <line x1="480" y1="380" x2="480" y2="760" stroke="#b45309" stroke-width="8" stroke-linecap="round" />
+  <line x1="620" y1="300" x2="620" y2="770" stroke="#f59e0b" stroke-width="10" stroke-linecap="round" />
+  <line x1="910" y1="280" x2="910" y2="760" stroke="#d97706" stroke-width="11" stroke-linecap="round" />
+  <line x1="1050" y1="410" x2="1050" y2="760" stroke="#b45309" stroke-width="7" stroke-linecap="round" />
+  <line x1="1280" y1="320" x2="1280" y2="750" stroke="#f59e0b" stroke-width="9" stroke-linecap="round" />
+  <line x1="1410" y1="410" x2="1410" y2="760" stroke="#d97706" stroke-width="8" stroke-linecap="round" />
+  <line x1="1520" y1="420" x2="1520" y2="760" stroke="#b45309" stroke-width="7" stroke-linecap="round" />
+
+  <!-- Front Semi-transparent Fishing Net Barrier -->
+  <polygon points="60,520 620,500 910,540 1520,530 1520,720 910,750 620,740 60,730" fill="url(#fishNetPat)" opacity="0.85" />
+  <!-- Horizontal supporting bamboo cords -->
+  <path d="M60,520 Q400,535 620,500 T910,540 T1520,530" fill="none" stroke="#f59e0b" stroke-width="4" />
+  <path d="M60,650 Q400,660 620,640 T910,670 T1520,660" fill="none" stroke="#b45309" stroke-width="3" />
+
+  <!-- Wooden Sampan Boat in Enclosure -->
+  <path d="M200,650 Q750,710 1480,630 Q1450,670 1200,690 Q750,730 220,670 Z" fill="#475569" stroke="#1e293b" stroke-width="4" />
+  <path d="M210,655 Q750,715 1470,635" fill="none" stroke="#94a3b8" stroke-width="3" />
+
+  <!-- Boat Engine (Outboard with Propeller Shaft) -->
+  <rect x="1340" y="525" width="60" height="50" rx="6" fill="#dc2626" stroke="#7f1d1d" stroke-width="3" />
+  <rect x="1350" y="575" width="40" height="30" fill="#334155" />
+  <line x1="1370" y1="580" x2="1520" y2="600" stroke="#64748b" stroke-width="5" />
+
+  <!-- Fisherman Silhouette inside Boat -->
+  <!-- Body/Shirt -->
+  <path d="M540,490 L610,480 L625,580 L530,580 Z" fill="#1e293b" />
+  <!-- Sun Hat (Bucket hat) -->
+  <ellipse cx="575" cy="460" rx="30" ry="12" fill="#0f172a" />
+  <ellipse cx="575" cy="450" rx="20" ry="10" fill="#1e293b" />
+  <!-- Arms holding bamboo pole -->
+  <path d="M540,510 L565,540 M600,505 L565,540" stroke="#f1f5f9" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Foreground Dark Water Ripples & Mirror Reflections -->
+  <path d="M50,780 Q450,750 850,790 Q1250,830 1550,780" stroke="url(#waterRippleGrad)" stroke-width="4" fill="none" opacity="0.6" />
+  <path d="M100,830 Q550,800 950,840 Q1350,880 1550,830" stroke="url(#waterRippleGrad)" stroke-width="5" fill="none" opacity="0.7" />
+  <path d="M0,870 Q400,840 800,880 Q1200,910 1600,870" stroke="url(#waterRippleGrad)" stroke-width="6" fill="none" opacity="0.8" />
+
+  <!-- Badge / Location Tag -->
+  <rect x="30" y="30" width="340" height="42" rx="21" fill="#011b2e" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.5" />
+  <circle cx="52" cy="51" r="7" fill="#38bdf8" />
+  <text x="70" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#e0f2fe" letter-spacing="1">NUÔI TRỒNG THỦY SẢN VEN BỜ</text>
+</svg>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Camera, Maximize2, X } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Camera, X } from 'lucide-react';
 
 interface EditorialPhotoProps {
   id: string;
@@ -9,6 +9,7 @@ interface EditorialPhotoProps {
   credit?: string;
   aspectRatio?: '16/9' | '4/3' | '21/9' | '3/2';
   customImageMap?: Record<string, string>;
+  onPhotoChange?: (id: string, newUrl: string) => void;
 }
 
 export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
@@ -16,19 +17,65 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
   src,
   fallbackGraphic,
   caption,
-  credit = 'Ảnh: Báo chí khảo sát thực tế',
-  aspectRatio = '16/9',
-  customImageMap = {}
+  credit,
+  aspectRatio = '4/3',
+  customImageMap = {},
+  onPhotoChange
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Check if a local uploaded image URL is provided in customImageMap or direct src
   const activeSrc = customImageMap[id] || src;
 
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && onPhotoChange) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        if (result) {
+          setImgError(false);
+          onPhotoChange(id, result);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const file = e.dataTransfer.files?.[0];
+    if (file && onPhotoChange) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        if (result) {
+          setImgError(false);
+          onPhotoChange(id, result);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <>
-      <figure className="my-10 sm:my-14 rounded-2xl overflow-hidden bg-[#03294c]/90 border border-cyan-500/30 shadow-2xl transition-all duration-300 hover:border-cyan-400/60">
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={handleFileSelect}
+      />
+
+      <figure 
+        className="my-8 sm:my-10 rounded-2xl overflow-hidden bg-[#03294c]/90 border border-cyan-500/30 shadow-2xl transition-all duration-300 hover:border-cyan-400/60 w-full"
+        onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
+        onDrop={handleDrop}
+      >
         <div 
           className="relative w-full overflow-hidden cursor-pointer group bg-[#021d36]"
           style={{ aspectRatio }}
@@ -40,7 +87,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               alt={caption}
               referrerPolicy="no-referrer"
               onError={() => setImgError(true)}
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
             />
           ) : fallbackGraphic ? (
             <div className="w-full h-full flex items-center justify-center p-4">
@@ -52,17 +99,11 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               <span className="text-sm font-editorial-sans font-medium">{caption}</span>
             </div>
           )}
-
-          {/* Hover zoom overlay badge */}
-          <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md text-white text-xs font-medium flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <Maximize2 className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Xem ảnh lớn</span>
-          </div>
         </div>
 
         {/* Documentary Photo Caption */}
-        <figcaption className="p-3 sm:p-4 border-t border-white/10 bg-black/50 backdrop-blur-sm text-xs sm:text-[13px] md:text-sm text-slate-200 font-editorial-sans leading-relaxed">
-          <p className="text-justify">
+        <figcaption className="p-3.5 sm:p-4 border-t border-white/10 bg-black/50 backdrop-blur-sm text-xs sm:text-[13px] md:text-sm text-slate-200 font-editorial-sans leading-relaxed">
+          <p className="text-justify font-medium">
             {caption}
           </p>
           {credit && (
@@ -88,7 +129,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
           </button>
 
           <div 
-            className="max-w-5xl max-h-[90vh] flex flex-col rounded-2xl overflow-hidden bg-[#02223f] border border-cyan-400/40 shadow-2xl"
+            className="max-w-4xl max-h-[90vh] flex flex-col rounded-2xl overflow-hidden bg-[#02223f] border border-cyan-400/40 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="overflow-auto flex items-center justify-center bg-black/50">
@@ -97,7 +138,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
                   src={activeSrc}
                   alt={caption}
                   referrerPolicy="no-referrer"
-                  className="max-h-[75vh] w-auto object-contain"
+                  className="max-h-[75vh] w-auto object-contain brightness-[1.08] contrast-[1.02] saturate-[1.05]"
                 />
               ) : fallbackGraphic ? (
                 <div className="p-6">{fallbackGraphic}</div>
@@ -109,7 +150,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               )}
             </div>
 
-            <div className="p-5 border-t border-cyan-500/20 bg-[#02223f] text-sm text-slate-200 font-editorial-sans">
+            <div className="p-4 sm:p-5 border-t border-cyan-500/20 bg-[#02223f] text-sm text-slate-200 font-editorial-sans">
               <p className="italic text-justify leading-relaxed">{caption}</p>
               {credit && (
                 <span className="block mt-2 text-xs text-cyan-400 font-semibold uppercase text-right">

@@ -7,6 +7,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { articleContent } from './data/articleData';
 import { HeroSection } from './components/HeroSection';
 import { FullScreenEditorialPhoto } from './components/FullScreenEditorialPhoto';
+import { EditorialPhoto } from './components/EditorialPhoto';
 
 // 6 Real High-Res Journalistic Photographs by Reporter Ngọc Oai
 import nguDanMinhImg from './assets/images/regenerated_image_1790847187524.jpg';
@@ -15,6 +16,9 @@ import khoangTauDaImg from './assets/images/regenerated_image_1790846987152.jpg'
 import damCuMongImg from './assets/images/regenerated_image_1790846990098.jpg';
 import cuaBienDeGiImg from './assets/images/regenerated_image_1790845600529.jpg';
 import vinhXuanDaiImg from './assets/images/regenerated_image_1790847833273.jpg';
+import pgsVuThanhCaImg from './assets/images/regenerated_image_1790851119038.png';
+import tauContainerEvergreenImg from './assets/images/regenerated_image_1790851760364.jpg';
+import damPhaNuoiTrongImg from './assets/images/regenerated_image_1790852276174.jpg';
 
 import { ArrowUp } from 'lucide-react';
 
@@ -272,16 +276,29 @@ export default function App() {
 
         {/* SECTION 4: Đổi tư duy quản trị để làm giàu từ biển */}
         <article id="doi-tu-duy-quan-tri" className="mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-editorial-sans mb-8 tracking-tight text-white flex items-center gap-3">
-            <span className="w-8 h-1 bg-cyan-400 rounded-full inline-block" />
-            <span>{articleContent.sections[4].heading}</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-editorial-sans mb-8 tracking-tight pl-4 sm:pl-6 border-l-4 sm:border-l-[6px] border-red-600 leading-[1.15] uppercase">
+            <span className="block text-cyan-300 drop-shadow-md uppercase">
+              Đổi tư duy quản trị
+            </span>
+            <span className="block text-white mt-1 sm:mt-1.5 uppercase">
+              để làm giàu từ biển
+            </span>
           </h2>
 
-          <div className="text-[17px] sm:text-[19px] leading-[1.8] mb-10">
-            <p className="text-justify leading-relaxed">
+          <div className="mb-10">
+            <p className="text-[19px] sm:text-[21px] leading-[1.8] italic text-justify text-slate-100">
               {articleContent.sections[4].paragraphs[0]}
             </p>
           </div>
+
+          {/* FULL PHOTO 1: Evergreen Container Ship entering Seaport */}
+          <FullScreenEditorialPhoto
+            id="goc-nhin-tau-bien"
+            src={photoOverrides['goc-nhin-tau-bien'] || tauContainerEvergreenImg}
+            caption="Các tàu hàng siêu trường, siêu trọng cập cảng Quy Nhơn (Gia Lai) để bốc dỡ, nhập khẩu hàng hóa."
+            credit="ẢNH: DŨNG NHÂN"
+            onPhotoChange={handlePhotoChange}
+          />
 
           {/* Sub-heading 4.1: Khó khăn về cảng, đánh bắt, nuôi trồng… */}
           <div id="kho-khan-ve-cang" className="mb-10 pt-4">
@@ -297,6 +314,14 @@ export default function App() {
               ))}
             </div>
           </div>
+
+          {/* FULL PHOTO 2: Coastal Lagoon Aquaculture & Fishing Nets */}
+          <FullScreenEditorialPhoto
+            id="goc-nhin-nuoi-trong"
+            src={photoOverrides['goc-nhin-nuoi-trong'] || damPhaNuoiTrongImg}
+            credit="ẢNH: DŨNG NHÂN"
+            onPhotoChange={handlePhotoChange}
+          />
 
           {/* Sub-heading 4.2: Thách thức với du lịch biển */}
           <div id="thach-thuc-du-lich" className="mb-10 pt-4">
@@ -320,11 +345,25 @@ export default function App() {
             </h3>
 
             <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
-              {articleContent.sections[7].paragraphs.map((p, idx) => (
-                <p key={idx} className="text-justify leading-relaxed">
-                  {p}
-                </p>
-              ))}
+              <p className="text-justify leading-relaxed">
+                {articleContent.sections[7].paragraphs[0]}
+              </p>
+
+              {/* Photo of PGS-TS Vũ Thanh Ca - Fitted to the text column */}
+              <EditorialPhoto
+                id="pgs-vu-thanh-ca"
+                src={photoOverrides['pgs-vu-thanh-ca'] || pgsVuThanhCaImg}
+                caption="PGS-TS Vũ Thanh Ca, nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo, Tổng cục Biển và Hải đảo Việt Nam"
+                aspectRatio="4/3"
+                onPhotoChange={handlePhotoChange}
+              />
+
+              <p className="text-justify leading-relaxed">
+                {articleContent.sections[7].paragraphs[1]}
+              </p>
+              <p className="text-justify leading-relaxed">
+                {articleContent.sections[7].paragraphs[2]}
+              </p>
             </div>
 
             {/* Author Attribution verbatim */}

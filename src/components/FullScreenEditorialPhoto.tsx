@@ -3,8 +3,9 @@ import { X } from 'lucide-react';
 
 interface FullScreenEditorialPhotoProps {
   id: string;
-  imageSrc: string;
-  caption: string;
+  imageSrc?: string;
+  src?: string;
+  caption?: string;
   subLocation?: string;
   credit?: string;
   onPhotoChange?: (id: string, newUrl: string) => void;
@@ -13,11 +14,13 @@ interface FullScreenEditorialPhotoProps {
 export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> = ({
   id,
   imageSrc,
+  src,
   caption,
   subLocation,
   credit = 'Ảnh: NGỌC OAI',
   onPhotoChange
 }) => {
+  const effectiveSrc = imageSrc || src || '';
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -71,17 +74,16 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
           className="relative w-full h-[60vh] sm:h-[75vh] md:h-[82vh] min-h-[460px] max-h-[850px] group cursor-pointer overflow-hidden bg-[#011424]"
           onClick={() => setIsLightboxOpen(true)}
         >
-          {/* Main Visual Image */}
+          {/* Main Visual Image - Clean & Bright */}
           <img
-            src={imageSrc}
+            src={effectiveSrc}
             alt={caption}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
           />
 
-          {/* Cinematic Top/Bottom Gradient Shadows */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent pointer-events-none" />
+          {/* Minimal soft bottom vignette only behind captions if needed */}
+          <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
           {/* Top Left Tag / Location Badge */}
           {subLocation && (
@@ -93,22 +95,26 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
           )}
 
           {/* Bottom Captions Overlay */}
-          <div className="absolute bottom-0 inset-x-0 p-3 sm:p-6 md:p-8 pointer-events-none">
-            <div className="max-w-4xl mx-auto">
-              <figcaption className="p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-sm border border-white/10 text-white font-editorial-sans shadow-xl pointer-events-auto space-y-1.5">
-                <p className="text-xs sm:text-[13px] md:text-sm leading-relaxed text-slate-200 text-justify">
-                  {caption}
-                </p>
-                {credit && (
-                  <div className="flex items-center justify-end pt-1 border-t border-white/10">
-                    <span className="text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase tracking-wider">
-                      {credit}
-                    </span>
-                  </div>
-                )}
-              </figcaption>
+          {(caption || credit) && (
+            <div className="absolute bottom-0 inset-x-0 p-3 sm:p-6 md:p-8 pointer-events-none">
+              <div className="max-w-4xl mx-auto">
+                <figcaption className="p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-sm border border-white/10 text-white font-editorial-sans shadow-xl pointer-events-auto space-y-1.5">
+                  {caption && (
+                    <p className="text-xs sm:text-[13px] md:text-sm leading-relaxed text-slate-200 text-justify">
+                      {caption}
+                    </p>
+                  )}
+                  {credit && (
+                    <div className={`flex items-center justify-end ${caption ? 'pt-1 border-t border-white/10' : ''}`}>
+                      <span className="text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase tracking-wider">
+                        {credit}
+                      </span>
+                    </div>
+                  )}
+                </figcaption>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </figure>
 
@@ -135,27 +141,31 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={imageSrc}
+              src={effectiveSrc}
               alt={caption}
               referrerPolicy="no-referrer"
-              className="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl border border-cyan-500/30"
+              className="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl border border-cyan-500/30 brightness-[1.08] contrast-[1.02] saturate-[1.05]"
             />
           </div>
 
           {/* Modal Caption */}
-          <div 
-            className="max-w-4xl mx-auto w-full p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-md border border-white/15 text-white font-editorial-sans shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <p className="text-xs sm:text-[13px] md:text-sm leading-relaxed text-slate-200 text-justify">
-              {caption}
-            </p>
-            {credit && (
-              <span className="block mt-1.5 text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase text-right">
-                {credit}
-              </span>
-            )}
-          </div>
+          {(caption || credit) && (
+            <div 
+              className="max-w-4xl mx-auto w-full p-3 sm:p-4 rounded-xl bg-black/50 backdrop-blur-md border border-white/15 text-white font-editorial-sans shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {caption && (
+                <p className="text-xs sm:text-[13px] md:text-sm leading-relaxed text-slate-200 text-justify">
+                  {caption}
+                </p>
+              )}
+              {credit && (
+                <span className={`block ${caption ? 'mt-1.5' : ''} text-[11px] sm:text-xs text-cyan-300/90 font-semibold uppercase text-right`}>
+                  {credit}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       )}
     </>

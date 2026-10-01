@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sunsetSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="25%" stop-color="#7c6f85" />
+      <stop offset="55%" stop-color="#d97706" />
+      <stop offset="75%" stop-color="#f59e0b" />
+      <stop offset="90%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fffbeb" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#fde047" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="sunsetWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="25%" stop-color="#b45309" />
+      <stop offset="50%" stop-color="#78350f" />
+      <stop offset="85%" stop-color="#451a03" />
+      <stop offset="100%" stop-color="#1c1917" />
+    </linearGradient>
+    <linearGradient id="sunReflection" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#fef08a" stop-opacity="0.8" />
+      <stop offset="75%" stop-color="#fbbf24" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="380" fill="url(#sunsetSkyGrad)" />
+
+  <!-- The Blazing Sunset Sun Orb -->
+  <ellipse cx="740" cy="240" rx="140" ry="70" fill="url(#sunGlow)" />
+  <ellipse cx="740" cy="240" rx="60" ry="30" fill="#ffffff" />
+
+  <!-- Distant Coastline Shore & Village Silhouette -->
+  <path d="M0,350 Q400,345 800,348 Q1200,345 1600,350 L1600,365 L0,365 Z" fill="#1e293b" />
+  <!-- Distant trees and buildings silhouettes -->
+  <path d="M50,350 L60,340 L70,350 M200,350 L215,335 L230,350 M1200,350 L1220,330 L1240,350 M1350,350 L1370,335 L1390,350" stroke="#0f172a" stroke-width="2" />
+
+  <!-- Lagoon Water Surface -->
+  <rect y="360" width="1600" height="540" fill="url(#sunsetWaterGrad)" />
+
+  <!-- Golden Sun Reflection Path on Water -->
+  <polygon points="710,360 770,360 840,650 630,650" fill="url(#sunReflection)" filter="blur(6px)" />
+  <!-- Shimmering Waves on reflection -->
+  <path d="M680,380 Q740,375 800,380 M660,410 Q740,405 820,410 M640,450 Q740,440 840,450 M610,500 Q740,490 870,500 M580,560 Q740,550 900,560 M550,620 Q740,610 930,620" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.75" />
+
+  <!-- Distant Anchored Wooden Sampan Boats (Silhouettes) -->
+  <path d="M30,375 Q80,385 130,375 Q80,380 30,375" fill="#0f172a" />
+  <path d="M260,365 Q330,375 400,365 Q330,370 260,365" fill="#0f172a" />
+  <path d="M600,368 Q650,375 700,368 Q650,372 600,368" fill="#0f172a" />
+  <path d="M780,368 Q840,378 900,368 Q840,373 780,368" fill="#0f172a" />
+  <path d="M1250,370 Q1380,390 1510,370 Q1380,380 1250,370" fill="#0f172a" />
+  <line x1="1350" y1="360" x2="1350" y2="385" stroke="#0f172a" stroke-width="4" />
+
+  <!-- Right Wooden Boat with Fisherman Silhouette in Distance -->
+  <polygon points="1170,415 1580,440 1480,470 1200,450" fill="#090d16" />
+  <circle cx="1370" cy="385" r="10" fill="#090d16" />
+  <path d="M1360,395 L1380,395 L1385,435 L1355,435 Z" fill="#090d16" />
+
+  <!-- Foreground Shoreline Bank / Mudflat -->
+  <path d="M0,740 Q400,700 800,750 Q1100,770 1600,720 L1600,900 L0,900 Z" fill="#18181b" />
+  <path d="M600,760 Q900,720 1600,740 L1600,900 L600,900 Z" fill="#09090b" />
+
+  <!-- Large Wooden Canoe / Sampan in Foreground -->
+  <path d="M0,770 Q300,660 920,490 Q750,680 0,860 Z" fill="#27272a" stroke="#09090b" stroke-width="4" />
+  <path d="M10,770 Q300,665 910,495" fill="none" stroke="#e4e4e7" stroke-width="3" opacity="0.8" />
+  
+  <!-- Big Mound of Folded Fishing Nets in Canoe Bow -->
+  <path d="M180,720 C180,630 350,560 520,620 C600,650 630,710 600,740 C520,770 240,780 180,720 Z" fill="#1c1917" stroke="#292524" stroke-width="3" />
+  <path d="M220,690 Q360,610 500,650 M250,730 Q380,640 540,680" stroke="#78716c" stroke-width="2" opacity="0.5" stroke-dasharray="6,3" />
+
+  <!-- Fisherman Standing by Shoreline (Silhouette & Highlights) -->
+  <!-- Red Cap (Backwards) -->
+  <ellipse cx="1000" cy="255" rx="35" ry="20" fill="#dc2626" />
+  <path d="M965,255 L940,265" stroke="#dc2626" stroke-width="8" stroke-linecap="round" />
+  <!-- Head & Neck -->
+  <circle cx="1005" cy="275" r="18" fill="#1c1917" />
+  <!-- Torso (Bare chest, muscular silhouette) -->
+  <path d="M980,295 L1060,290 L1080,410 L990,415 Z" fill="#1c1917" />
+  <!-- Arms Pulling Fishing Net -->
+  <path d="M1000,310 L920,400 L860,490" stroke="#1c1917" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M1050,305 L1110,400 L1150,490" stroke="#1c1917" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Shorts -->
+  <rect x="990" y="410" width="90" height="95" rx="8" fill="#09090b" />
+  <!-- Legs -->
+  <rect x="1000" y="500" width="28" height="90" rx="10" fill="#1c1917" />
+  <rect x="1050" y="500" width="28" height="85" rx="10" fill="#1c1917" />
+
+  <!-- Fishing Net Spanning from Hands into Water & Shore -->
+  <path d="M920,400 C800,460 700,560 550,620 L860,630 C940,540 1020,460 1110,400 Z" fill="#292524" opacity="0.8" />
+  <path d="M920,400 Q800,480 600,600 M950,420 Q830,500 680,630 M1020,400 Q1060,500 1150,650" stroke="#a8a29e" stroke-width="1.5" opacity="0.6" stroke-dasharray="8,4" />
+  <!-- Net trailing into the foreground sand -->
+  <path d="M1000,660 Q1200,640 1450,750 Q1200,820 950,810 Z" fill="#1c1917" opacity="0.9" />
+
+  <!-- Badge / Location Tag -->
+  <rect x="30" y="30" width="300" height="42" rx="21" fill="#011b2e" fill-opacity="0.85" stroke="#f59e0b" stroke-width="1.5" />
+  <circle cx="52" cy="51" r="7" fill="#f59e0b" />
+  <text x="70" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#fef3c7" letter-spacing="1">HOÀNG HÔN ĐẦM PHÁ</text>
+</svg>

@@ -48,7 +48,7 @@ export const OceanWaterMotion: React.FC = () => {
 
       ctx.clearRect(0, 0, width, height);
 
-      const waterLineY = height * 0.33;
+      const waterLineY = Math.max(height * 0.36, 215);
 
       // 1. SKY / WATER SURFACE (Top 33%)
       const skyGrad = ctx.createLinearGradient(0, 0, 0, waterLineY);

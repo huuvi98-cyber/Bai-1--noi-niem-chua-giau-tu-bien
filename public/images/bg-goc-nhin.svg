@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2484c6" />
+      <stop offset="45%" stop-color="#60b1e4" />
+      <stop offset="85%" stop-color="#b4daf4" />
+      <stop offset="100%" stop-color="#d6edfc" />
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b4668" />
+      <stop offset="35%" stop-color="#07567d" />
+      <stop offset="70%" stop-color="#043c58" />
+      <stop offset="100%" stop-color="#02273b" />
+    </linearGradient>
+    <linearGradient id="hullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00432f" />
+      <stop offset="50%" stop-color="#06593f" />
+      <stop offset="100%" stop-color="#023021" />
+    </linearGradient>
+    <linearGradient id="wakeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#7dd3fc" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#07567d" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky & Sea -->
+  <rect width="1600" height="420" fill="url(#skyGrad)" />
+  <rect y="400" width="1600" height="500" fill="url(#seaGrad)" />
+
+  <!-- Distant Sea Horizon & Bridge -->
+  <line x1="600" y1="400" x2="1600" y2="400" stroke="#94a3b8" stroke-width="2.5" opacity="0.6" stroke-dasharray="15,4" />
+  
+  <!-- Coastal City / Seaport Shoreline -->
+  <path d="M0,380 Q250,385 450,420 Q650,450 780,430 L800,410 L750,370 L400,360 L150,370 Z" fill="#d97706" opacity="0.4" />
+  <path d="M0,375 Q200,375 420,405 Q600,435 720,420 L730,400 L680,365 L350,355 L100,365 Z" fill="#cbd5e1" opacity="0.7" />
+
+  <!-- City Skyline / Buildings -->
+  <!-- Landmark High-rise Tower -->
+  <rect x="200" y="255" width="60" height="135" rx="3" fill="#f8fafc" opacity="0.95" />
+  <rect x="210" y="270" width="40" height="100" fill="#93c5fd" opacity="0.4" />
+  <!-- Additional towers -->
+  <rect x="80" y="300" width="45" height="85" fill="#e2e8f0" opacity="0.9" />
+  <rect x="135" y="320" width="55" height="70" fill="#cbd5e1" opacity="0.9" />
+  <rect x="270" y="315" width="40" height="80" fill="#f1f5f9" opacity="0.85" />
+  <rect x="320" y="335" width="50" height="60" fill="#e2e8f0" opacity="0.8" />
+  <rect x="380" y="345" width="65" height="55" fill="#f8fafc" opacity="0.85" />
+
+  <!-- Harbor Gantry Cranes (Yellow & Red) -->
+  <!-- Giant Red Crane -->
+  <path d="M720,380 L760,320 L770,320 L775,380 M750,320 L820,305 L825,310 L765,335" stroke="#ef4444" stroke-width="4" fill="none" />
+  <!-- Yellow Cranes -->
+  <path d="M580,410 L610,355 L618,355 L625,410 M600,355 L660,340 L665,345 L615,370" stroke="#eab308" stroke-width="3" fill="none" />
+  <path d="M640,415 L665,370 L672,370 L680,415 M660,370 L710,358" stroke="#eab308" stroke-width="2.5" fill="none" />
+
+  <!-- Port Breakwater & Jetties -->
+  <polygon points="180,460 480,450 560,420 530,410 180,430" fill="#64748b" opacity="0.6" />
+
+  <!-- Bow Waves & Ship Wake -->
+  <path d="M100,880 Q400,820 900,640 Q1050,600 1150,560" fill="none" stroke="url(#wakeGrad)" stroke-width="40" opacity="0.5" filter="blur(6px)" />
+  <path d="M950,640 Q1020,680 1120,720 Q1200,740 1350,770" fill="none" stroke="url(#wakeGrad)" stroke-width="30" opacity="0.6" filter="blur(4px)" />
+
+  <!-- Giant Container Ship: EVERGREEN -->
+  <!-- Main Green Hull -->
+  <polygon points="120,740 380,890 850,710 1150,560 1120,530 800,530 350,550 120,740" fill="url(#hullGrad)" stroke="#022c1e" stroke-width="4" />
+  
+  <!-- Bulbous Bow Shadow / Bottom Red Stripe -->
+  <polygon points="150,830 380,890 550,830 350,800" fill="#b91c1c" opacity="0.9" />
+
+  <!-- Large White "EVERGREEN" Lettering along Starboard Hull -->
+  <text x="760" y="695" transform="rotate(-23 760 695)" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="52" fill="#ffffff" letter-spacing="8" opacity="0.95">EVERGREEN</text>
+
+  <!-- Superstructure / Bridge Tower (White) -->
+  <polygon points="340,620 520,580 500,700 350,770" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+  <rect x="360" y="610" width="130" height="40" transform="skewY(-10)" fill="#ffffff" stroke="#94a3b8" />
+  <!-- Bridge Windows -->
+  <rect x="370" y="618" width="110" height="10" transform="skewY(-10)" fill="#0284c7" />
+  <!-- Radar Mast & Antennas -->
+  <line x1="440" y1="580" x2="440" y2="520" stroke="#f8fafc" stroke-width="3" />
+  <line x1="425" y1="540" x2="455" y2="540" stroke="#f8fafc" stroke-width="2" />
+
+  <!-- Stacks of Shipping Containers (Green, Red, Grey, White) -->
+  <!-- Aft Stacks -->
+  <g transform="translate(140, 680) skewY(-22)">
+    <rect x="0" y="0" width="70" height="35" fill="#15803d" stroke="#052e16" stroke-width="1.5" />
+    <rect x="75" y="0" width="70" height="35" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+    <rect x="0" y="-40" width="70" height="35" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+    <rect x="75" y="-40" width="70" height="35" fill="#22c55e" stroke="#052e16" stroke-width="1.5" />
+    <rect x="150" y="0" width="70" height="35" fill="#15803d" stroke="#052e16" stroke-width="1.5" />
+    <rect x="150" y="-40" width="70" height="35" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+  </g>
+
+  <!-- Mid & Forward Stacks -->
+  <g transform="translate(540, 560) skewY(-22)">
+    <!-- Bay 1 -->
+    <rect x="0" y="0" width="80" height="38" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+    <rect x="0" y="-42" width="80" height="38" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+    <rect x="0" y="-84" width="80" height="38" fill="#15803d" stroke="#052e16" stroke-width="1.5" />
+    <rect x="0" y="-126" width="80" height="38" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+
+    <!-- Bay 2 -->
+    <rect x="85" y="0" width="80" height="38" fill="#e2e8f0" stroke="#475569" stroke-width="1.5" />
+    <rect x="85" y="-42" width="80" height="38" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+    <rect x="85" y="-84" width="80" height="38" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+
+    <!-- Bay 3 -->
+    <rect x="170" y="0" width="80" height="38" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+    <rect x="170" y="-42" width="80" height="38" fill="#15803d" stroke="#052e16" stroke-width="1.5" />
+    <rect x="170" y="-84" width="80" height="38" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+
+    <!-- Bay 4 (Forward) -->
+    <rect x="255" y="0" width="75" height="38" fill="#16a34a" stroke="#052e16" stroke-width="1.5" />
+    <rect x="255" y="-42" width="75" height="38" fill="#e2e8f0" stroke="#475569" stroke-width="1.5" />
+
+    <!-- Bay 5 (Bow Tip) -->
+    <rect x="335" y="0" width="70" height="35" fill="#dc2626" stroke="#450a0a" stroke-width="1.5" />
+  </g>
+
+  <!-- Water Surface Reflections & Ripple Details -->
+  <ellipse cx="650" cy="820" rx="350" ry="15" fill="#38bdf8" opacity="0.3" filter="blur(5px)" />
+  <ellipse cx="980" cy="730" rx="280" ry="12" fill="#7dd3fc" opacity="0.4" filter="blur(4px)" />
+
+  <!-- Badge / Attribution Label -->
+  <rect x="30" y="30" width="310" height="42" rx="21" fill="#011b2e" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.5" />
+  <circle cx="52" cy="51" r="7" fill="#38bdf8" />
+  <text x="70" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#e0f2fe" letter-spacing="1">HÀNH TRÌNH RA BIỂN LỚN</text>
+</svg>

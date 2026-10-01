@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="40%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Warm Skin Tones -->
+    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="40%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+
+    <!-- Striped Shirt Pattern -->
+    <pattern id="stripedShirt" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#f8fafc"/>
+      <line x1="8" y1="0" x2="8" y2="16" stroke="#db2777" stroke-width="2.5" opacity="0.65"/>
+    </pattern>
+
+    <!-- Microphone Metallic Gradient -->
+    <linearGradient id="micMetal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="30%" stop-color="#94a3b8"/>
+      <stop offset="70%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Conference Hall -->
+  <rect width="1200" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle architectural panels in background -->
+  <rect x="80" y="80" width="220" height="740" fill="#334155" opacity="0.2" rx="8"/>
+  <rect x="340" y="60" width="160" height="780" fill="#475569" opacity="0.25" rx="8"/>
+  <rect x="530" y="100" width="120" height="740" fill="#334155" opacity="0.2" rx="8"/>
+
+  <!-- Warm ambient stage light bokeh -->
+  <circle cx="200" cy="200" r="160" fill="#38bdf8" opacity="0.1" filter="blur(40px)"/>
+  <circle cx="1000" cy="300" r="220" fill="#0284c7" opacity="0.12" filter="blur(50px)"/>
+
+  <!-- Character: PGS-TS Vũ Thanh Ca -->
+  <!-- Torso & Shoulders -->
+  <path d="M340,900 Q400,560 620,530 Q840,560 900,900 Z" fill="url(#stripedShirt)"/>
+  <!-- Shirt Collar -->
+  <polygon points="560,530 620,620 640,620 700,530 650,510 590,510" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <polygon points="560,530 610,610 590,620 540,540" fill="#e2e8f0"/>
+  <polygon points="700,530 650,610 670,620 720,540" fill="#e2e8f0"/>
+
+  <!-- Red Lanyard Ribbon -->
+  <path d="M590,530 Q630,680 640,780 Q650,680 670,530" fill="none" stroke="#ef4444" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <rect x="580" y="440" width="100" height="110" rx="20" fill="url(#skinShadow)"/>
+
+  <!-- Head / Face -->
+  <!-- Shaved / Bald dome -->
+  <ellipse cx="630" cy="310" rx="140" ry="170" fill="url(#skinGrad)"/>
+  
+  <!-- Ears -->
+  <ellipse cx="485" cy="330" rx="22" ry="38" fill="url(#skinShadow)"/>
+  <ellipse cx="775" cy="330" rx="22" ry="38" fill="url(#skinShadow)"/>
+
+  <!-- Eyebrows -->
+  <path d="M530,285 Q565,275 600,285" fill="none" stroke="#7c2d12" stroke-width="6" stroke-linecap="round"/>
+  <path d="M660,285 Q695,275 730,285" fill="none" stroke="#7c2d12" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Eyes - Intellectual, engaging gaze -->
+  <ellipse cx="565" cy="305" rx="16" ry="10" fill="#ffffff"/>
+  <circle cx="566" cy="305" r="7" fill="#1e293b"/>
+  <circle cx="568" cy="303" r="2.5" fill="#ffffff"/>
+
+  <ellipse cx="695" cy="305" rx="16" ry="10" fill="#ffffff"/>
+  <circle cx="694" cy="305" r="7" fill="#1e293b"/>
+  <circle cx="696" cy="303" r="2.5" fill="#ffffff"/>
+
+  <!-- Glasses / Brow lines -->
+  <path d="M550,265 Q630,250 710,265" fill="none" stroke="#ea580c" stroke-width="2" opacity="0.4"/>
+
+  <!-- Nose -->
+  <path d="M630,295 L625,350 Q630,360 645,355 Q650,345 640,335" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Mouth - Speaking passionately -->
+  <path d="M590,390 Q630,420 670,390 Q630,380 590,390 Z" fill="#7f1d1d"/>
+  <path d="M605,392 Q630,398 655,392" fill="none" stroke="#ffffff" stroke-width="4"/>
+
+  <!-- Right Hand gesturing forward -->
+  <g transform="translate(360, 680)">
+    <path d="M0,80 Q20,30 60,30 Q100,30 90,90 Q80,140 10,130 Z" fill="url(#skinGrad)"/>
+    <path d="M50,90 L80,180 Q65,190 45,170 L25,100 Z" fill="url(#skinShadow)"/>
+  </g>
+
+  <!-- Left Hand holding Microphone -->
+  <g transform="translate(600, 580)">
+    <!-- Hand grasping mic -->
+    <ellipse cx="50" cy="180" rx="35" ry="30" fill="url(#skinGrad)"/>
+    <!-- Wristwatch -->
+    <rect x="25" y="210" width="50" height="24" rx="4" fill="url(#micMetal)"/>
+    <circle cx="50" cy="222" r="9" fill="#0284c7"/>
+
+    <!-- Microphone Body & Grill -->
+    <!-- Cable/Handle -->
+    <rect x="36" y="80" width="28" height="150" rx="6" fill="#0f172a"/>
+    <!-- Metal Mesh Capsule -->
+    <rect x="32" y="10" width="36" height="75" rx="16" fill="url(#micMetal)"/>
+    <line x1="32" y1="35" x2="68" y2="35" stroke="#1e293b" stroke-width="2"/>
+    <line x1="32" y1="55" x2="68" y2="55" stroke="#1e293b" stroke-width="2"/>
+  </g>
+
+  <!-- Bottom Lower-Third Name Badge (Broadcast Style) -->
+  <rect x="40" y="780" width="720" height="85" rx="12" fill="#0f172a" fill-opacity="0.9" stroke="#0284c7" stroke-width="2"/>
+  <text x="70" y="820" font-family="sans-serif" font-weight="900" font-size="26" fill="#38bdf8" letter-spacing="1">PGS-TS VŨ THANH CA</text>
+  <text x="70" y="848" font-family="sans-serif" font-weight="600" font-size="16" fill="#cbd5e1">Nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo</text>
+</svg>
