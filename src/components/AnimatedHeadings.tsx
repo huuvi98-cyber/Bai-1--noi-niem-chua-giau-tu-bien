@@ -80,8 +80,8 @@ interface Section4HeadingProps {
 }
 
 export const AnimatedSection4Heading: React.FC<Section4HeadingProps> = ({
-  line1 = "Đổi tư duy quản trị",
-  line2 = "để làm giàu từ biển",
+  line1 = "Tư duy quản trị mới",
+  line2 = "đánh thức tiềm năng biển",
 }) => {
   const ref = useRef<HTMLHeadingElement>(null);
   const [isInView, setIsInView] = useState(false);

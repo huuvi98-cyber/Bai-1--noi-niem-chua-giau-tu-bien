@@ -10,8 +10,8 @@ import { FullScreenEditorialPhoto } from './components/FullScreenEditorialPhoto'
 import { EditorialPhoto } from './components/EditorialPhoto';
 import { AnimatedSectionHeading, AnimatedSection4Heading } from './components/AnimatedHeadings';
 
-// 6 Real High-Res Journalistic Photographs by Reporter Ngọc Oai
-import nguDanMinhImg from './assets/images/regenerated_image_1790847187524.jpg';
+// Real High-Res Journalistic Photographs
+import tauCaXaBoImg from './assets/images/regenerated_image_1790905061019.jpg';
 import khoangTauDaImg from './assets/images/regenerated_image_1790846987152.jpg';
 import damCuMongImg from './assets/images/regenerated_image_1790846990098.jpg';
 import cuaBienDeGiImg from './assets/images/regenerated_image_1790845600529.jpg';
@@ -107,16 +107,24 @@ export default function App() {
       <main ref={articleRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         
         {/* LTS: Lời Tòa Soạn Block - 100% Verbatim */}
-        <section id="lts-section" className="p-6 sm:p-8 rounded-2xl border border-cyan-400/40 bg-[#03345d]/85 text-slate-100 backdrop-blur-sm mb-12 shadow-xl">
-          <p className="text-[17px] sm:text-[19px] leading-[1.8] italic text-justify opacity-95">
-            <strong className="not-italic text-cyan-300 font-bold">LTS: </strong>
-            {articleContent.lts.replace(/^LTS:\s*/, '')}
-          </p>
+        <section id="lts-section" className="p-6 sm:p-8 rounded-2xl border border-cyan-400/40 bg-[#03345d]/85 text-slate-100 backdrop-blur-sm mb-12 shadow-xl space-y-4">
+          {articleContent.lts.split('\n\n').map((paragraph, idx) => (
+            <p key={idx} className="text-[17px] sm:text-[19px] leading-[1.8] italic text-justify opacity-95">
+              {idx === 0 ? (
+                <>
+                  <strong className="not-italic text-cyan-300 font-bold">LTS: </strong>
+                  {paragraph.replace(/^LTS:\s*/, '')}
+                </>
+              ) : (
+                paragraph
+              )}
+            </p>
+          ))}
         </section>
 
         {/* Sapo / Article Subtitle - 100% Verbatim */}
-        <div className="mb-14 sm:mb-16">
-          <p className="text-xl sm:text-2xl font-editorial-sans font-medium leading-relaxed sm:leading-relaxed text-cyan-200 text-justify">
+        <div className="mb-14 sm:mb-16 border-l-4 border-cyan-400 pl-6 sm:pl-8 py-2 bg-gradient-to-r from-cyan-950/40 via-cyan-950/20 to-transparent rounded-r-2xl">
+          <p className="text-xl sm:text-2xl md:text-[25px] font-editorial-sans font-semibold leading-[1.65] text-cyan-100 text-justify tracking-normal drop-shadow-sm">
             {articleContent.sapo}
           </p>
         </div>
@@ -127,27 +135,30 @@ export default function App() {
 
           <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
             {/* Paragraph 1 */}
-            <p className="editorial-drop-cap text-justify">
+            <p className="text-justify">
               {articleContent.sections[0].paragraphs[0]}
             </p>
-
-            {/* FULL SCREEN PHOTO 1: Ngư dân Nguyễn Văn Minh */}
-            <FullScreenEditorialPhoto
-              id="ngu-dan-minh"
-              imageSrc={photoOverrides['ngu-dan-minh'] || nguDanMinhImg}
-              caption="Ngư dân Nguyễn Văn Minh (45 tuổi, phường Hoài Nhơn, Gia Lai) điều khiển tàu hậu cần về cập cảng cá Tam Quan sau chuyến biển 2 tháng ở vùng biển Trường Sa."
-              credit="Ảnh: NGỌC OAI"
-              onPhotoChange={handlePhotoChange}
-            />
 
             {/* Paragraph 2 */}
             <p className="text-justify">
               {articleContent.sections[0].paragraphs[1]}
             </p>
 
-            {/* Paragraph 3 */}
+            {/* FULL SCREEN PHOTO: Tàu cá xa bờ trở về */}
+            <FullScreenEditorialPhoto
+              id="tau-ca-xa-bo"
+              imageSrc={photoOverrides['tau-ca-xa-bo'] || tauCaXaBoImg}
+              caption="Ngư dân tỉnh Đắk Lắk vươn khơi được mùa cá lớn nhưng giá trị mang về vẫn chưa cao như kỳ vọng."
+              credit="Ảnh: HUỲNH HẢI"
+              onPhotoChange={handlePhotoChange}
+            />
+
+            {/* Paragraph 3 (index 2) & Paragraph 4 (index 3): Sản lượng và giá cá ngừ */}
             <p className="text-justify">
               {articleContent.sections[0].paragraphs[2]}
+            </p>
+            <p className="text-justify">
+              {articleContent.sections[0].paragraphs[3]}
             </p>
 
             {/* FULL SCREEN PHOTO: Nhiều chuyến tàu vươn khơi mang về lượng cá ngừ đại dương... */}
@@ -159,9 +170,15 @@ export default function App() {
               onPhotoChange={handlePhotoChange}
             />
 
-            {/* Paragraph 4 */}
+            {/* Paragraph 5 (index 4), Paragraph 6 (index 5), Paragraph 7 (index 6): Mùa trăng Tam Quan và Phỏng vấn doanh nghiệp */}
             <p className="text-justify">
-              {articleContent.sections[0].paragraphs[3]}
+              {articleContent.sections[0].paragraphs[4]}
+            </p>
+            <p className="text-justify">
+              {articleContent.sections[0].paragraphs[5]}
+            </p>
+            <p className="text-justify">
+              {articleContent.sections[0].paragraphs[6]}
             </p>
 
             {/* FULL SCREEN PHOTO 3: Khoang tàu truyền thống hao hụt */}
@@ -173,9 +190,9 @@ export default function App() {
               onPhotoChange={handlePhotoChange}
             />
 
-            {/* Paragraph 5 */}
+            {/* Paragraph 8 (index 7): Trăn trở của chính quyền địa phương */}
             <p className="text-justify">
-              {articleContent.sections[0].paragraphs[4]}
+              {articleContent.sections[0].paragraphs[7]}
             </p>
           </div>
         </article>
@@ -185,12 +202,11 @@ export default function App() {
           <AnimatedSectionHeading heading={articleContent.sections[1].heading} />
 
           <div className="space-y-6 text-[17px] sm:text-[19px] leading-[1.8]">
-            <p className="text-justify">
-              {articleContent.sections[1].paragraphs[0]}
-            </p>
-            <p className="text-justify">
-              {articleContent.sections[1].paragraphs[1]}
-            </p>
+            {articleContent.sections[1].paragraphs.map((p, idx) => (
+              <p key={idx} className="text-justify">
+                {p}
+              </p>
+            ))}
           </div>
         </article>
 
@@ -218,6 +234,9 @@ export default function App() {
             <p className="text-justify">
               {articleContent.sections[2].paragraphs[2]}
             </p>
+            <p className="text-justify">
+              {articleContent.sections[2].paragraphs[3]}
+            </p>
 
             {/* FULL SCREEN PHOTO 5: Vùng nuôi bóp nghẹt cửa biển Đề Gi */}
             <FullScreenEditorialPhoto
@@ -229,7 +248,7 @@ export default function App() {
             />
 
             <p className="text-justify">
-              {articleContent.sections[2].paragraphs[3]}
+              {articleContent.sections[2].paragraphs[4]}
             </p>
           </div>
         </article>
@@ -262,9 +281,9 @@ export default function App() {
           onPhotoChange={handlePhotoChange}
         />
 
-        {/* SECTION 4: Đổi tư duy quản trị để làm giàu từ biển */}
+        {/* SECTION 4: Tư duy quản trị mới đánh thức tiềm năng biển */}
         <article id="doi-tu-duy-quan-tri" className="mb-14 sm:mb-20">
-          <AnimatedSection4Heading line1="Đổi tư duy quản trị" line2="để làm giàu từ biển" />
+          <AnimatedSection4Heading line1="Tư duy quản trị mới" line2="đánh thức tiềm năng biển" />
 
           <div className="mb-10">
             <p className="text-[19px] sm:text-[21px] leading-[1.8] italic text-justify text-slate-100">
@@ -329,6 +348,9 @@ export default function App() {
               <p className="text-justify leading-relaxed">
                 {articleContent.sections[7].paragraphs[0]}
               </p>
+              <p className="text-justify leading-relaxed">
+                {articleContent.sections[7].paragraphs[1]}
+              </p>
 
               {/* Photo of PGS-TS Vũ Thanh Ca - Fitted to the text column */}
               <EditorialPhoto
@@ -336,9 +358,11 @@ export default function App() {
                 src={photoOverrides['pgs-vu-thanh-ca'] || pgsVuThanhCaImg}
                 caption={
                   <span className="block space-y-0.5">
-                    <strong className="font-semibold text-white block">PGS-TS Vũ Thanh Ca,</strong>
+                    <strong className="font-bold text-white uppercase tracking-wider block">
+                      PGS-TS VŨ THANH CA
+                    </strong>
                     <span className="font-normal italic text-slate-300 block">
-                      nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
+                      Nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
                     </span>
                     <span className="font-normal italic text-slate-300 block">
                       Tổng cục Biển và Hải đảo Việt Nam
@@ -350,10 +374,10 @@ export default function App() {
               />
 
               <p className="text-justify leading-relaxed">
-                {articleContent.sections[7].paragraphs[1]}
+                {articleContent.sections[7].paragraphs[2]}
               </p>
               <p className="text-justify leading-relaxed">
-                {articleContent.sections[7].paragraphs[2]}
+                {articleContent.sections[7].paragraphs[3]}
               </p>
             </div>
 
@@ -361,11 +385,11 @@ export default function App() {
             {articleContent.sections[7].author && (
               <div className="mt-8 pt-4 border-t border-cyan-400/20 text-right">
                 <div className="text-sm sm:text-base font-editorial-sans text-right space-y-1">
-                  <span className="font-bold block text-cyan-300">
-                    PGS-TS Vũ Thanh Ca,
+                  <span className="font-bold uppercase tracking-wider block text-cyan-300">
+                    PGS-TS VŨ THANH CA
                   </span>
                   <span className="font-normal italic text-slate-200 block">
-                    nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
+                    Nguyên Viện trưởng Viện Nghiên cứu biển và hải đảo,
                   </span>
                   <span className="font-normal italic text-slate-300 block">
                     Tổng cục Biển và Hải đảo Việt Nam

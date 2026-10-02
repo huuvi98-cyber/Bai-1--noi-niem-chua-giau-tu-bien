@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
         {/* Center Title Block - Monumental typography centered */}
         <div className="mt-auto mb-4 sm:mb-8 pt-4 max-w-5xl mx-auto w-full text-center translate-y-3 sm:translate-y-5">
           {/* Main Monumental Title */}
-          <h1 className="font-editorial-sans text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-white leading-[0.92] drop-shadow-2xl text-center">
+          <h1 className="font-editorial-sans text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] xl:text-[6.2rem] font-black uppercase tracking-tight text-white leading-[1.12] sm:leading-[1.15] drop-shadow-2xl text-center">
             <span className="block text-white text-center">Nỗi niềm</span>
             <span className="block text-cyan-400 text-center">chưa giàu</span>
             <span className="block text-white text-center">từ biển</span>
