@@ -319,7 +319,8 @@ export default function App() {
           <FullScreenEditorialPhoto
             id="goc-nhin-nuoi-trong"
             src={photoOverrides['goc-nhin-nuoi-trong'] || damPhaNuoiTrongImg}
-            credit="ẢNH: DŨNG NHÂN"
+            caption="Ngư dân đi thả lưới đánh bắt cá trên phá Tam Giang - Cầu Hai."
+            credit="ẢNH: VĂN THẮNG"
             onPhotoChange={handlePhotoChange}
           />
 

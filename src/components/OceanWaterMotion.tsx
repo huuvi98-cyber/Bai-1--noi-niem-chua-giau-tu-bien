@@ -17,22 +17,24 @@ export const OceanWaterMotion: React.FC = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let width = 0;
+    let height = 0;
 
-    const handleResize = () => {
+    const updateSize = () => {
       if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      const rect = canvas.getBoundingClientRect();
+      width = canvas.width = rect.width || window.innerWidth;
+      height = canvas.height = rect.height || window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize);
+    updateSize();
+    window.addEventListener('resize', updateSize);
 
     // Particles (drifting plankton & micro-bubbles)
-    const particleCount = 40;
+    const particleCount = 35;
     const particles = Array.from({ length: particleCount }, () => ({
-      x: Math.random() * width,
-      y: height * 0.35 + Math.random() * (height * 0.65),
+      x: Math.random() * (width || window.innerWidth),
+      y: (height || 500) * 0.35 + Math.random() * ((height || 500) * 0.65),
       radius: Math.random() * 2 + 0.6,
       baseAlpha: Math.random() * 0.35 + 0.15,
       speedY: -(Math.random() * 0.3 + 0.12),
@@ -48,7 +50,11 @@ export const OceanWaterMotion: React.FC = () => {
 
       ctx.clearRect(0, 0, width, height);
 
-      const waterLineY = Math.max(height * 0.36, 215);
+      // Adaptive waterline: adapts to screen width so it consistently hugs the bottom of BÀI 1
+      const isMobile = width < 640;
+      const waterLineY = isMobile
+        ? Math.min(Math.max(height * 0.31, 160), 195)
+        : Math.min(Math.max(height * 0.34, 205), 250);
 
       // 1. SKY / WATER SURFACE (Top 33%)
       const skyGrad = ctx.createLinearGradient(0, 0, 0, waterLineY);
@@ -145,7 +151,7 @@ export const OceanWaterMotion: React.FC = () => {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', updateSize);
     };
   }, []);
 
