@@ -8,6 +8,7 @@ interface FullScreenEditorialPhotoProps {
   caption?: string;
   subLocation?: string;
   credit?: string;
+  objectPosition?: string;
   onPhotoChange?: (id: string, newUrl: string) => void;
 }
 
@@ -18,6 +19,7 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
   caption,
   subLocation,
   credit = 'Ảnh: NGỌC OAI',
+  objectPosition = 'center 12%',
   onPhotoChange
 }) => {
   const effectiveSrc = imageSrc || src || '';
@@ -74,12 +76,13 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
           className="relative w-full h-[60vh] sm:h-[75vh] md:h-[82vh] min-h-[460px] max-h-[850px] group cursor-pointer overflow-hidden bg-[#011424]"
           onClick={() => setIsLightboxOpen(true)}
         >
-          {/* Main Visual Image - Clean & Bright */}
+          {/* Main Visual Image - Clean & Bright, perfectly positioned without clipping heads/tops */}
           <img
             src={effectiveSrc}
             alt={caption}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
+            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
+            style={{ objectPosition }}
           />
 
           {/* Minimal soft bottom vignette only behind captions if needed */}
