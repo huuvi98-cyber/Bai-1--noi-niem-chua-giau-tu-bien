@@ -19,7 +19,7 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
   caption,
   subLocation,
   credit = 'Ảnh: NGỌC OAI',
-  objectPosition = 'center 12%',
+  objectPosition = 'center',
   onPhotoChange
 }) => {
   const effectiveSrc = imageSrc || src || '';
@@ -73,16 +73,16 @@ export const FullScreenEditorialPhoto: React.FC<FullScreenEditorialPhotoProps> =
         onDrop={handleDrop}
       >
         <div 
-          className="relative w-full h-[60vh] sm:h-[75vh] md:h-[82vh] min-h-[460px] max-h-[850px] group cursor-pointer overflow-hidden bg-[#011424]"
+          className="relative w-full h-[70vh] sm:h-[85vh] md:h-[92vh] lg:h-[96vh] min-h-[520px] sm:min-h-[680px] lg:min-h-[780px] max-h-[1100px] group cursor-pointer overflow-hidden bg-[#011424]"
           onClick={() => setIsLightboxOpen(true)}
         >
-          {/* Main Visual Image - Clean & Bright, perfectly positioned without clipping heads/tops */}
+          {/* Main Visual Image - Taller vertical frame preserves rich photo details with object-center */}
           <img
             src={effectiveSrc}
             alt={caption}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
-            style={{ objectPosition }}
+            className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
+            style={{ objectPosition: objectPosition || 'center' }}
           />
 
           {/* Minimal soft bottom vignette only behind captions if needed */}

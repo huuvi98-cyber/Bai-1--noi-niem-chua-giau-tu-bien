@@ -371,7 +371,7 @@ export default function App() {
                   </span>
                 }
                 aspectRatio="4/3"
-                objectPosition="top"
+                objectPosition="center"
                 onPhotoChange={handlePhotoChange}
               />
 

@@ -20,7 +20,7 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
   caption,
   credit,
   aspectRatio = '4/3',
-  objectPosition = 'top',
+  objectPosition = 'center',
   customImageMap = {},
   onPhotoChange
 }) => {
@@ -89,8 +89,8 @@ export const EditorialPhoto: React.FC<EditorialPhotoProps> = ({
               alt={typeof caption === 'string' ? caption : id}
               referrerPolicy="no-referrer"
               onError={() => setImgError(true)}
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
-              style={{ objectPosition }}
+              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] brightness-[1.10] contrast-[1.03] saturate-[1.06]"
+              style={{ objectPosition: objectPosition || 'center' }}
             />
           ) : fallbackGraphic ? (
             <div className="w-full h-full flex items-center justify-center p-4">
